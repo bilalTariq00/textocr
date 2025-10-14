@@ -37,7 +37,7 @@ yarn-error.log*
 next-env.d.ts
 
 # Azure Configuration (IMPORTANT: Protect your API keys!)
-src/config/azure.ts
+# src/config/azure.ts - Now committed with placeholder values
 
 # AWS Configuration (IMPORTANT: Protect your credentials!)
-src/config/aws.ts
+# src/config/aws.ts - Now committed with placeholder values
