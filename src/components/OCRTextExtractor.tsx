@@ -553,7 +553,7 @@ const OCRTextExtractor: React.FC = () => {
     
     // Set appropriate font family for RTL languages
     const fontFamily = isRTL 
-      ? 'var(--font-jameel-nastaleeq), var(--font-noto-sans-arabic), var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif'
+      ? 'var(--font-persian-default), var(--font-amiri), Amiri, var(--font-jameel-nastaleeq), var(--font-noto-sans-arabic), Scheherazade New, Arial Unicode MS, sans-serif'
       : 'Arial, Helvetica, sans-serif';
     
     return { direction, textAlign, fontFamily, language };
@@ -861,43 +861,13 @@ const OCRTextExtractor: React.FC = () => {
       </div>
 
       {/* Test Section */}
-      <div className="bg-purple-50 rounded-lg p-4 mb-4">
-        <div className="text-center">
-          <button
-            onClick={() => {
-              setExtractedText('Test formatted text for debugging');
-              setRawText('Test raw text for debugging');
-              setExtractionStatus('🧪 Test text loaded');
-            }}
-            className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm"
-          >
-            🧪 Load Test Text
-          </button>
-        </div>
-      </div>
+    
 
       {/* Text Display and Formatting Section */}
       {(extractedText || rawText) && (
         <div className="bg-white rounded-lg shadow-md p-6">
           <div className="flex justify-between items-center mb-4">
-            <div>
-              <h2 className="text-xl font-semibold text-gray-800">Extracted Text</h2>
-              {detectedLanguage && (
-                <div className="mt-1">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                    📝 {detectedLanguage}
-                  </span>
-                  <div className="mt-1 text-xs text-gray-500">
-                    Current: {formatting.direction.toUpperCase()} | Align: {formatting.textAlign}
-                  </div>
-                  {extractionStatus && (
-                    <div className="mt-1 text-xs text-blue-600">
-                      {extractionStatus}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
+          
                 <div className="flex gap-2">
                   <button
                     onClick={downloadText}
@@ -977,9 +947,9 @@ const OCRTextExtractor: React.FC = () => {
                   <option value="Georgia, serif">Georgia (LTR)</option>
                   <option value="Verdana, sans-serif">Verdana (LTR)</option>
                   <option value="Courier New, monospace">Courier New (LTR)</option>
+                    <option value="var(--font-amiri), Amiri, var(--font-jameel-nastaleeq), var(--font-noto-sans-arabic), Scheherazade New, Arial Unicode MS, sans-serif">Amiri (RTL) - Default</option>
                     <option value="var(--font-jameel-nastaleeq), var(--font-noto-sans-arabic), var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif">Jameel Noori Nastaleeq (RTL)</option>
                     <option value="var(--font-noto-sans-arabic), var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif">Noto Sans Arabic (RTL)</option>
-                    <option value="var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif">Amiri (RTL)</option>
                     <option value="Scheherazade New, Arial Unicode MS, sans-serif">Scheherazade New (RTL)</option>
                     <option value="Arial Unicode MS, sans-serif">Arial Unicode MS (RTL)</option>
                 </select>
@@ -1043,13 +1013,7 @@ const OCRTextExtractor: React.FC = () => {
           </div>
 
           {/* Debug Info */}
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-xs">
-            <div className="font-medium text-yellow-800 mb-2">Debug Info:</div>
-            <div>Extracted Text Length: {extractedText?.length || 0}</div>
-            <div>Raw Text Length: {rawText?.length || 0}</div>
-            <div>Show Formatted: {showFormatted ? 'Yes' : 'No'}</div>
-            <div>Current Text: {showFormatted ? extractedText?.substring(0, 100) : rawText?.substring(0, 100)}</div>
-          </div>
+          
 
           {/* Formatted Text Display */}
           <div className="border border-gray-300 rounded-lg p-4 min-h-96 bg-white">
