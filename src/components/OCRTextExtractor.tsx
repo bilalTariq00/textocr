@@ -553,7 +553,7 @@ const OCRTextExtractor: React.FC = () => {
     
     // Set appropriate font family for RTL languages
     const fontFamily = isRTL 
-      ? 'var(--font-noto-sans-arabic), var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif'
+      ? 'var(--font-jameel-nastaleeq), var(--font-noto-sans-arabic), var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif'
       : 'Arial, Helvetica, sans-serif';
     
     return { direction, textAlign, fontFamily, language };
@@ -977,10 +977,11 @@ const OCRTextExtractor: React.FC = () => {
                   <option value="Georgia, serif">Georgia (LTR)</option>
                   <option value="Verdana, sans-serif">Verdana (LTR)</option>
                   <option value="Courier New, monospace">Courier New (LTR)</option>
-                  <option value="var(--font-noto-sans-arabic), var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif">Noto Sans Arabic (RTL)</option>
-                  <option value="var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif">Amiri (RTL)</option>
-                  <option value="Scheherazade New, Arial Unicode MS, sans-serif">Scheherazade New (RTL)</option>
-                  <option value="Arial Unicode MS, sans-serif">Arial Unicode MS (RTL)</option>
+                    <option value="var(--font-jameel-nastaleeq), var(--font-noto-sans-arabic), var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif">Jameel Noori Nastaleeq (RTL)</option>
+                    <option value="var(--font-noto-sans-arabic), var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif">Noto Sans Arabic (RTL)</option>
+                    <option value="var(--font-amiri), Amiri, Scheherazade New, Arial Unicode MS, sans-serif">Amiri (RTL)</option>
+                    <option value="Scheherazade New, Arial Unicode MS, sans-serif">Scheherazade New (RTL)</option>
+                    <option value="Arial Unicode MS, sans-serif">Arial Unicode MS (RTL)</option>
                 </select>
               </div>
 
